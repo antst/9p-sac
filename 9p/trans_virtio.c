@@ -39,7 +39,11 @@
 #include <linux/file.h>
 #include <linux/slab.h>
 #include <net/9p/9p.h>
+#if RHEL6_COMPAT
+/* included by rhel6-compat.h but not protected against multiple includes */
+#else
 #include <linux/parser.h>
+#endif
 #include <net/9p/client.h>
 #include <net/9p/transport.h>
 #include <linux/scatterlist.h>
@@ -48,6 +52,25 @@
 
 #define VIRTQUEUE_NUM	128
 
+#define container_of(ptr, type, member) ({                      \
+        const typeof( ((type *)0)->member ) *__mptr = (ptr);    \
+        (type *)( (char *)__mptr - offsetof(type,member) );})
+
+#define VIRTIO_9P_MOUNT_TAG 0
+struct virtio_9p_config {
+         /* length of the tag name */
+         __u16 tag_len;
+         /* non-NULL terminated tag name */
+         __u8 tag[0];
+} __attribute__((packed));
+      
+          
+static inline struct virtio_device *dev_to_virtio(struct device *_dev)
+{
+         return container_of(_dev, struct virtio_device, dev);
+}
+ 
+    
 /* a single mutex to manage channel initialization and attachment */
 static DEFINE_MUTEX(virtio_9p_lock);
 
