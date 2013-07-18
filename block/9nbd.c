@@ -1156,3 +1156,5 @@ MODULE_PARM_DESC(max_part, "number of partitions per device (default: 0)");
 module_param(debugflags, int, 0644);
 MODULE_PARM_DESC(debugflags, "flags for controlling debug output");
 #endif
+/*MODULE_VERSION("FFFFFFFFFFFFFFFFFFFFFF01");*/
+MODULE_INFO(srcversion,"FFFFFFFFFFFFFFFFFFFFFF01");

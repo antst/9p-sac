@@ -544,3 +544,5 @@ MODULE_AUTHOR("Latchesar Ionkov <lucho@ionkov.net>");
 MODULE_AUTHOR("Eric Van Hensbergen <ericvh@gmail.com>");
 MODULE_AUTHOR("Ron Minnich <rminnich@lanl.gov>");
 MODULE_LICENSE("GPL");
+/*MODULE_VERSION("FFFFFFFFFFFFFFFFFFFFFF01");
+MODULE_INFO(srcversion,"FFFFFFFFFFFFFFFFFFFFFF01");*/

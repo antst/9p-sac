@@ -724,3 +724,5 @@ module_exit(p9_trans_rdma_exit);
 MODULE_AUTHOR("Tom Tucker <tom@opengridcomputing.com>");
 MODULE_DESCRIPTION("RDMA Transport for 9P");
 MODULE_LICENSE("Dual BSD/GPL");
+/*MODULE_VERSION("FFFFFFFFFFFFFFFFFFFFFF01");*/
+MODULE_INFO(srcversion,"FFFFFFFFFFFFFFFFFFFFFF01");
